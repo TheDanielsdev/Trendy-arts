@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejinder Sharma</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="icon" href="images/modern-art.png">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body x-data="{navBarOpen: false, scrolledFromTop: false}" @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false" x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false">
+
+    <!-- Header start here -->
+    <style>
+        .bgo {
+            background-color: rgb(219, 216, 216);
+        }
+    </style>
+    <header class="fixed w-full h-20 bgo z-10 transition-all delay-150" :class="{'h-20': !scrolledFromTop, 'h-16': scrolledFromTop}" :class="{'overflow-hidden': navBarOpen, 'overflow-auto': !navBarOpen}">
+        <div class="container mx-auto flex justify-between items-center text-white px-5 py-6 transition-all delay-150" :class="{'py-6': !scrolledFromTop, 'py-4': scrolledFromTop}">
+            <a href="#" class="text-2xl font-medium transition-all delay-150" :class="{'text-2xl': !scrolledFromTop, 'text-xl': scrolledFromTop}"><img width="50" src="images/modern-art.png" alt=""></a>
+            <nav>
+                <button class="md:hidden" @click="navBarOpen = ! navBarOpen">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <ul class="
+                fixed
+                left-0
+                right-0
+                transform
+                translate-x-full
+                bgo
+                min-h-screen
+                px-5
+                p-5
+                space-y-5
+                transition
+                delay-150
+                md:relative
+                md:flex
+                md:min-h-0
+                md:translate-x-0
+                md:space-y-0
+                md:space-x-3
+                xl:space-x-8
+                md:p-0
+                " :class="{'translate-x-full': !navBarOpen, 'translate-x-0': navBarOpen}">
+
+                    <style>
+                        .hov:hover {
+                            color: #021049;
+                            font-weight: bold;
+                            transition: 1s;
+                        }
+                    </style>
+                    <li><a href="#home" @click="navBarOpen = ! navBarOpen" class="hov">Home</a></li>
+                    <li><a href="#about" @click="navBarOpen = ! navBarOpen" class="hov">About</a></li>
+                    <li><a href="#testimonies" @click="navBarOpen = ! navBarOpen" class="hov">Testimonials</a></li>
+                    <li><a href="#price" @click="navBarOpen = ! navBarOpen" class="hov">Contact Us</a></li>
+
+                    <li><a href="#getHired" class="px-3 py-2  text-black rounded-md button hover:text-white">Get Hired</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- header ends here -->
+
+    <!-- home section -->
+
+    <style>
+        #slider {
+            overflow: hidden;
+        }
+        
+        #slider figure {
+            position: relative;
+            width: 500%;
+            margin: 0;
+            left: 0;
+            animation: 20s slider infinite;
+        }
+        
+        #slider figure>section {
+            width: 20%;
+            float: left;
+        }
+        
+        @keyframes slider {
+            0% {
+                left: 0%;
+            }
+            20% {
+                left: 0%;
+            }
+            25% {
+                left: -100%;
+            }
+            45% {
+                left: -100%;
+            }
+            50% {
+                left: -200%;
+            }
+            70% {
+                left: -200%;
+            }
+            75% {
+                left: -300%;
+            }
+            95% {
+                left: -300%;
+            }
+            100% {
+                left: -400%;
+            }
+        }
+        
+        .bg {
+            background-color: #fff;
+            color: #000;
+        }
+        
+        .button {
+            background-color: rgb(219, 216, 216);
+        }
+        
+        .button:hover {
+            background-color: #021049;
+        }
+    </style>
+
+    <div id="slider">
+        <figure>
+            <!-- 0 -->
+            <section class="bg text-white min-h-screen grid place-items-center" id="home">
+                <div class="container mx-auto flex flex-col md:flex-row px-5 py-32 md:py-36 items-center">
+                    <div class="flex flex-col lg:flex-grow md:w-1/2 lg:pr-8 md:items-start md:text-left items-center text-center mb-8 md:mb-0">
+                        <h1 class="sm:text-4xl text-3xl mb-4 font-medium">We're Hiring
+                        </h1>
+                        <p class="mb-8 leading-relaxed" style="font-size: 20px;">Want to join us at Trendy-Arts ?</p>
+                        <ul class="flex space-x-4">
+                            <li><a href="#getHired" class="px-3 py-2 button text-black rounded-md  hover:text-white" style="font-size: 18px;">Get Hired !</a></li>
+                            <!-- <li>
+                                <a href="#" class="flex items-center"><img class="w-5 h-5" src="./images/play.svg" alt=""> <span class="ml-1">How it works</span></a>
+                            </li> -->
+                        </ul>
+                        <!-- <div class="mt-8">
+                            <h4 class="font-medium text-lg">Top Clients :</h4>
+                            <ul class="flex space-x-4 mt-2">
+                                <li class="italic">Tejinder</li>
+                                <li>Sharma</li>
+                                <li class="font-bold">Tejinder</li>
+                            </ul>
+                        </div> -->
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="./images/coming soon trendy.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+            <!-- 1 -->
+            <section class="bg text-white min-h-screen grid place-items-center" id="home">
+                <div class="container mx-auto flex flex-col md:flex-row px-5 py-32 md:py-36 items-center">
+                    <div class="flex flex-col lg:flex-grow md:w-1/2 lg:pr-8 md:items-start md:text-left items-center text-center mb-8 md:mb-0">
+                        <h1 class="sm:text-4xl text-3xl mb-4 font-medium">TROVE
+                        </h1>
+                        <p class="mb-8 leading-relaxed" style="font-size: 20px;">A weekly curated selection of the best works on Trendy-Arts by emerging and sought-after artists. All works available now.</p>
+                        <ul class="flex space-x-4">
+                            <li><a href="#" class="px-3 py-2 button text-black rounded-md  hover:text-white" style="font-size: 18px;">Explore</a></li>
+                            <!-- <li>
+                                <a href="#" class="flex items-center"><img class="w-5 h-5" src="./images/play.svg" alt=""> <span class="ml-1">How it works</span></a>
+                            </li> -->
+                        </ul>
+                        <!-- <div class="mt-8">
+                            <h4 class="font-medium text-lg">Top Clients :</h4>
+                            <ul class="flex space-x-4 mt-2">
+                                <li class="italic">Tejinder</li>
+                                <li>Sharma</li>
+                                <li class="font-bold">Tejinder</li>
+                            </ul>
+                        </div> -->
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="./images/for trendy.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+            <!-- 2 -->
+            <section class="bg text-white min-h-screen grid place-items-center" id="home">
+                <div class="container mx-auto flex flex-col md:flex-row px-5 py-32 md:py-36 items-center">
+                    <div class="flex flex-col lg:flex-grow md:w-1/2 lg:pr-8 md:items-start md:text-left items-center text-center mb-8 md:mb-0">
+                        <h1 class="sm:text-4xl text-3xl mb-4 font-medium">Browse by Collection
+                        </h1>
+                        <p class="mb-8 leading-relaxed" style="font-size: 20px;">Curated collections of works ready for purchase, from iconic artist series to emerging trends.</p>
+                        <ul class="flex space-x-4">
+                            <li><a href="#" class="px-3 py-2 button text-black rounded-md  hover:text-white" style="font-size: 18px;">Browse</a></li>
+
+                        </ul>
+                        <!-- <div class="mt-8">
+                            <h4 class="font-medium text-lg">Top Clients :</h4>
+                            <ul class="flex space-x-4 mt-2">
+                                <li class="italic">Tejinder</li>
+                                <li>Sharma</li>
+                                <li class="font-bold">Tejinder</li>
+                            </ul>
+                        </div> -->
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="./images/Art-PNG-Images.png" alt="" width="500">
+                    </div>
+                </div>
+            </section>
+            <!-- 3 -->
+
+            <section class="bg text-white min-h-screen grid place-items-center" id="home">
+                <div class="container mx-auto flex flex-col md:flex-row px-5 py-32 md:py-36 items-center">
+                    <div class="flex flex-col lg:flex-grow md:w-1/2 lg:pr-8 md:items-start md:text-left items-center text-center mb-8 md:mb-0">
+                        <h1 class="sm:text-4xl text-3xl mb-4 font-medium">Sell your Works
+                        </h1>
+                        <p class="mb-8 leading-relaxed" style="font-size: 20px;">Earn more when you sell works from your collection the smarter, simpler way—at auction with Trendy-Arts. Get started today with a free valuation.</p>
+                        <ul class="flex space-x-4">
+                            <li><a href="#" class="px-3 py-2 button text-black rounded-md ] hover:text-white" style="font-size: 18px;">Learn more</a></li>
+
+                        </ul>
+                        <!-- <div class="mt-8">
+                            <h4 class="font-medium text-lg">Top Clients :</h4>
+                            <ul class="flex space-x-4 mt-2">
+                                <li class="italic">Tejinder</li>
+                                <li>Sharma</li>
+                                <li class="font-bold">Tejinder</li>
+                            </ul>
+                        </div> -->
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="./images/png-art-3.png" alt="" width="500">
+                    </div>
+                </div>
+            </section>
+            <!-- 4 -->
+
+            <section class="bg text-white min-h-screen grid place-items-center" id="home">
+                <div class="container mx-auto flex flex-col md:flex-row px-5 py-32 md:py-36 items-center">
+                    <div class="flex flex-col lg:flex-grow md:w-1/2 lg:pr-8 md:items-start md:text-left items-center text-center mb-8 md:mb-0">
+                        <h1 class="sm:text-4xl text-3xl mb-4 font-medium">Post-war and contemporary art options
+                        </h1>
+                        <p class="mb-8 leading-relaxed" style="font-size: 20px;">Bid on standout lots from top post-war and contemporary artists, with proceeds directly supporting scholarships for HBCU students.</p>
+                        <ul class="flex space-x-4">
+                            <li><a href="#" class="px-3 py-2 button text-black rounded-md  hover:text-white" style="font-size: 18px;">Browse</a></li>
+
+                        </ul>
+                        <!-- <div class="mt-8">
+                <h4 class="font-medium text-lg">Top Clients :</h4>
+                <ul class="flex space-x-4 mt-2">
+                    <li class="italic">Tejinder</li>
+                    <li>Sharma</li>
+                    <li class="font-bold">Tejinder</li>
+                </ul>
+            </div> -->
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="./images/Art-PNG-Free-Image.png" alt="" width="500">
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+        </figure>
+    </div>
+
+    <!-- home section ends here -->
+
+    <!-- About section -->
+    <section class="bg-gray-100 min-h-screen grid place-items-center" id="about">
+        <div class="container mx-auto px-5 py-32">
+            <div class="flex flex-col w-full mb-8 text-center">
+                <h2 class="text-2xl md:text-3xl font-medium mb-4 tracking-wide">About Trendy-<span style="color: #021049;  font-weight: bold;">Arts</span></h2>
+                <p class="lg:w-1/2 mx-auto leading-relaxed">In Trendy<span style="color: #021049; font-size: 18px; font-weight: bold;">-Arts</span>, your number one source for all things <span style="color: #021049; font-size: 18px; font-weight: bold;">Arts</span>. We're dedicated to providing
+                    you the best of and quality
+                    <span style="color: #021049; font-size: 18px; font-weight: bold;">Arts </span>ever, with a focus on dependability. customer service, and top notch support.</p>
+            </div>
+            <div class="flex flex-wrap -m-4 justify-center">
+                <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
+                    <div class="border-2 rounded-lg border-gray-300 p-4">
+                        <span class="w-8 h-8 bg-[#0B163F] inline-flex items-center justify-center rounded"><img
+                                class="w-4 h-4" src="./images/medal.png" alt=""></span>
+                        <h5 class="font-medium mt-3">Quality</h5>
+                        <p class="mt-1 text-sm">We provide quality products and services.</p>
+                    </div>
+
+                </div>
+                <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
+                    <div class="border-2 rounded-lg border-gray-300 p-4">
+                        <span class="w-8 h-8 bg-[#0B163F] inline-flex items-center justify-center rounded"><img
+                                class="w-4 h-4" src="./images/link.png" alt=""></span>
+                        <h5 class="font-medium mt-3">Dependable</h5>
+                        <p class="mt-1 text-sm">We are highly trusthworthy and dependable.</p>
+                    </div>
+
+                </div>
+                <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
+                    <div class="border-2 rounded-lg border-gray-300 p-4">
+                        <span class="w-8 h-8 bg-[#0B163F] inline-flex items-center justify-center rounded"><img
+                                class="w-4 h-4" src="./images/gold-medal.png" alt=""></span>
+                        <h5 class="font-medium mt-3">Top Notch</h5>
+                        <p class="mt-1 text-sm">We are second to none</p>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="flex flex-wrap -m-4 mt-8">
+                <div class="p-4 md:w-1/2 w-full">
+                    <div class="rounded-lg px-4 py-8 relative overflow-hidden" style="background-color: #a5b5f6;">
+                        <div class="pr-24">
+                            <h3 class="font-medium text-lg">Sell your work</h3>
+                            <p class="mt-3">Earn more when you sell works from your collection the smarter, simpler way—at auction with Trendy-Arts...
+                            </p>
+                            <a href="#" class="px-4 py-2 inline-block mt-2 rounded" style="border: 2px solid #021049; color:#021049">Learn More</a>
+
+                        </div>
+                        <div class="absolute -bottom-1 right-0">
+                            <img class="w-36" src="./images/Art-PNG-Free-Image.png" alt="">
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+                <div class="p-4 md:w-1/2 w-full">
+                    <div class="rounded-lg px-4 py-8 relative overflow-hidden" style="background-color: rgb(219, 216, 216);">
+                        <div class="pr-24">
+                            <h3 class="font-medium text-lg">TROOVE</h3>
+                            <p class="mt-3">A weekly curated selection of the best works on Trendy-Arts by emerging and sought-after artists...
+                            </p>
+                            <a href="#" class="px-4 py-2 inline-block mt-2 rounded" style="border: 2px solid rgb(82, 81, 81); color:rgb(82, 81, 81)">Learn More</a>
+
+                        </div>
+                        <div class="absolute -bottom-1 right-0">
+                            <img class="w-36" src="./images/Art-PNG-Images.png" alt="">
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section Ends here -->
+
+    <!-- Services section starts here -->
+
+
+
+
+    <!-- Testimonials -->
+    <style>
+        #testimonies {
+            overflow: hidden;
+        }
+        
+        #testimonies figure {
+            position: relative;
+            width: 500%;
+            margin: 0;
+            left: 0;
+            animation: 20s slider infinite;
+        }
+        
+        #testimonies figure>div {
+            width: 20%;
+            float: left;
+        }
+        
+        @keyframes slider {
+            0% {
+                left: 0%;
+            }
+            20% {
+                left: 0%;
+            }
+            25% {
+                left: -100%;
+            }
+            45% {
+                left: -100%;
+            }
+            50% {
+                left: -200%;
+            }
+            70% {
+                left: -200%;
+            }
+            75% {
+                left: -300%;
+            }
+            95% {
+                left: -300%;
+            }
+            100% {
+                left: -400%;
+            }
+        }
+    </style>
+    <div id="testimonies">
+        <figure>
+            <div class="bg-[#021049]">
+                <div class="container mx-auto px-5 py-16 text-white">
+                    <div class="text-center">
+                        <span class="text-yellow-300">Testimonial</span>
+                        <h2 class="mt-2 text-2xl md:text-3xl font-medium">What They Say About Us</h2>
+
+                    </div>
+                    <div class="mt-8 flex items-center justify-between flex-col md:flex-row">
+                        <div class="md:w-1/2 lg:flex-grow lg:pr-16 mb-16 md:mb-0 md:pr-4">
+                            <h3 class="text-lg font-medium">"I have gotten at least 50 times the value from Trendy-Arts. Needless to say we are extremely satisfied with the results." - Leslie X.</h3>
+                            <span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span>
+                            <span style="font-size:100%;color:#FFBC08;">&starf;</span>
+
+                        </div>
+                        <!-- <div class="md:w-1/2 lg:w-1/3 w-5/6">
+                            <img src="./images/Rectangle 41.png" alt="">
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 2 -->
+
+            <div class="bg-[#021049]">
+                <div class="container mx-auto px-5 py-16 text-white">
+                    <div class="text-center">
+                        <span class="text-yellow-300">Testimonial</span>
+                        <h2 class="mt-2 text-2xl md:text-3xl font-medium">What They Say About Us</h2>
+
+                    </div>
+                    <div class="mt-8 flex items-center justify-between flex-col md:flex-row">
+                        <div class="md:w-1/2 lg:flex-grow lg:pr-16 mb-16 md:mb-0 md:pr-4">
+                            <h3 class="text-lg font-medium">"Thanks to Trendy-Arts, we've just launched our 5th website! I don't always clap, but when I do, it's because of Trendy-Arts. I'd be lost without Trendy-Arts." - Evangelin .</h3>
+                            <span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span>
+                            <span style="font-size:100%;color:#FFBC08;">&starf;</span>
+
+                        </div>
+                        <!-- <div class="md:w-1/2 lg:w-1/3 w-5/6">
+                            <img src="./images/Rectangle 41.png" alt="">
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 3 -->
+
+            <div class="bg-[#021049]">
+                <div class="container mx-auto px-5 py-16 text-white">
+                    <div class="text-center">
+                        <span class="text-yellow-300">Testimonial</span>
+                        <h2 class="mt-2 text-2xl md:text-3xl font-medium">What They Say About Us</h2>
+
+                    </div>
+                    <div class="mt-8 flex items-center justify-between flex-col md:flex-row">
+                        <div class="md:w-1/2 lg:flex-grow lg:pr-16 mb-16 md:mb-0 md:pr-4">
+                            <h3 class="text-lg font-medium">"I will recommend you to my colleagues. Trendy-Arts has completely surpassed our expectations." - Alex M.</h3>
+                            <span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span>
+                            <span style="font-size:100%;color:#FFBC08;">&starf;</span>
+
+                        </div>
+                        <!-- <div class="md:w-1/2 lg:w-1/3 w-5/6">
+                            <img src="./images/Rectangle 41.png" alt="">
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 4 -->
+
+            <div class="bg-[#021049]">
+                <div class="container mx-auto px-5 py-16 text-white">
+                    <div class="text-center">
+                        <span class="text-yellow-300">Testimonial</span>
+                        <h2 class="mt-2 text-2xl md:text-3xl font-medium">What They Say About Us</h2>
+
+                    </div>
+                    <div class="mt-8 flex items-center justify-between flex-col md:flex-row">
+                        <div class="md:w-1/2 lg:flex-grow lg:pr-16 mb-16 md:mb-0 md:pr-4">
+                            <h3 class="text-lg font-medium">"It really saves me time and effort. Trendy-Arts is exactly what our business has been lacking. Trendy-Arts is the real deal!" - Truda V.</h3>
+                            <span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span>
+                            <span style="font-size:100%;color:#FFBC08;">&starf;</span>
+
+                        </div>
+                        <!-- <div class="md:w-1/2 lg:w-1/3 w-5/6">
+                            <img src="./images/Rectangle 41.png" alt="">
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 5 -->
+
+            <div class="bg-[#021049]">
+                <div class="container mx-auto px-5 py-16 text-white">
+                    <div class="text-center">
+                        <span class="text-yellow-300">Testimonial</span>
+                        <h2 class="mt-2 text-2xl md:text-3xl font-medium">What They Say About Us</h2>
+
+                    </div>
+                    <div class="mt-8 flex items-center justify-between flex-col md:flex-row">
+                        <div class="md:w-1/2 lg:flex-grow lg:pr-16 mb-16 md:mb-0 md:pr-4">
+                            <h3 class="text-lg font-medium">"It's really wonderful. Since I invested in Trendy-Arts I made over 100,000 dollars profits. Wow what great service, I love it! Absolutely wonderful!" - Rene Q.</h3>
+                            <span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span><span style="font-size:100%;color:#FFBC08;">&starf;</span>
+                            <span style="font-size:100%;color:#FFBC08;">&starf;</span>
+
+                        </div>
+                        <!-- <div class="md:w-1/2 lg:w-1/3 w-5/6">
+                            <img src="./images/Rectangle 41.png" alt="">
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </figure>
+    </div>
+
+
+    </section>
+
+    <!-- services section ends here -->
+
+    <!-- price section starts here -->
+
+
+    <!-- Price section ends here -->
+
+    <!-- Page section start here -->
+
+
+    <!-- Page section ends here -->
+
+    <!-- shop section starts here -->
+    <section class="py-32" id="shop">
+        <style>
+            .mine {
+                position: relative;
+            }
+            
+            .mine h1 {
+                font-size: 24px;
+                font-weight: bold;
+                letter-spacing: 0.1rem;
+            }
+            
+            .mine .inputs {
+                display: flex;
+                justify-content: center;
+                margin: 25px auto;
+                padding: 20px auto;
+            }
+            
+            .inputs label {
+                font-size: 18px;
+                font-weight: bold;
+                color: #021049;
+                margin: 0 20px;
+            }
+            
+            .inputs input {
+                border: 3px solid #021049;
+                border-radius: 10px;
+                padding: 10px 100px;
+                margin: 10px auto;
+            }
+            
+            .inputs input::placeholder {}
+            
+            .btn {
+                position: absolute;
+                bottom: 0;
+                width: 20%;
+                justify-content: center;
+                align-items: center;
+                background-color: #021049;
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+            
+            @media (max-width: 992) {
+                .mine .inputs {
+                    padding: 10px;
+                    width: 100%;
+                    margin: 10px;
+                }
+            }
+            
+            @media (max-width: 600px) {
+                .mine .inputs {
+                    display: block;
+                    padding: 10px;
+                    width: 100%;
+                    margin: 0;
+                }
+                .mine .btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+                .inputs input {}
+            }
+        </style>
+        <div class="container mx-auto px-5 py-32 text-center mine" id="getHired">
+            <h1>Get Hired !</h1>
+            <form action="" method="POST" class="inputs">
+                <div>
+                    <label for="name">Name: </label>
+                    <input type="text" placeholder="enter name" width="10px">
+                    <br>
+                    <label for="name">Emai: </label>
+                    <input type="email" placeholder="enter email" width="10px">
+                </div>
+                <div>
+                    <label for="name">Phone: </label>
+                    <input type="number" placeholder="enter phone number" width="10px">
+                    <br>
+                    <label for="name">Address: </label>
+                    <input type="text" placeholder="enter address" width="10px">
+                </div>
+                <div>
+
+                </div>
+                <div class="btn"><button>Submit</button></div>
+            </form>
+        </div>
+    </section>
+    <!-- shop section ends here -->
+
+    <!-- Contacts section start here -->
+    <footer class="bgo" id="contacts">
+        <div class="container mx-auto px-5 py-32 text-white">
+            <div class="flex flex-wrap">
+                <div class="lg:w-1/2 md:w-2/3 w-full mb-10">
+                    <img src="./images/modern-art.png" alt="" width="100px">
+                    <p class="max-w-sm">Contact Us Today </p>
+                    <form action="" class="mt-2 flex sm:flex-row flex-col">
+                        <input class="px-4 py-2 rounded-md" type="text" placeholder="" style="background-color: transparent; border: 3px solid #021049;">
+                        <button type="submit" class="sm:ml-2 px-4 py-2 button text-white rounded-md sm:mt-0 mt-2 ml-0 self-start " style="font-weight: bold;">Send</button>
+                    </form>
+                </div>
+                <div class="lg:w-1/6 md:w-1/3 w-full">
+                    <h2 class="font-medium tracking-widest text-sm mb-4">Primary Page</h2>
+                    <nav class="list-none">
+                        <style>
+                            .permalinks {
+                                color: #fff;
+                                font-weight: bold;
+                            }
+                            
+                            .permalinks:hover {
+                                color: #021049;
+                            }
+                        </style>
+                        <li>
+                            <a href="#home" class="permalinks">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="permalinks">About</a>
+                        </li>
+                        <li>
+                            <a href="#testimonies" class="permalinks">Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="permalinks">Contact</a>
+                        </li>
+                    </nav>
+                </div>
+
+                <div class="lg:w-1/6 md:w-1/3 sm:mt-0 mt-4 w-full">
+                    <h2 class="font-medium tracking-widest text-sm mb-4">CATEGORIES</h2>
+                    <nav class="list-none">
+                        <li>
+                            <a href="#" class="permalinks">Browse by collections</a>
+                        </li>
+                        <li>
+                            <a href="#" class="permalinks">TROVE</a>
+                        </li>
+                        <li>
+                            <a href="#" class="permalinks">Sell your works</a>
+                        </li>
+                        <li>
+                            <a href="#" class="permalinks">Post-war and contemporary art options</a>
+                        </li>
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container mx-auto text-center px-5 pb-10 text-white">
+            <p>&copy Trendy<span style="color: #021049;">-Arts</span></p>
+        </div>
+    </footer>
+
+    <!-- contacts section ends here -->
+</body>
+
+</html>
