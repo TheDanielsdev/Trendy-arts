@@ -21,6 +21,10 @@
     /* 2 */
 }
 
+.error {
+    outline: 3px solid red;
+}
+
 ::before,
 ::after {
     --tw-content: '';
