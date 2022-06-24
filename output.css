@@ -23,6 +23,7 @@
 
 .error {
     outline: 3px solid red;
+    border-radius: 5px;
 }
 
 ::before,
